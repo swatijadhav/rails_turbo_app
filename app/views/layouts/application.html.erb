@@ -11,6 +11,10 @@
   </head>
 
   <body>
+
+    <%= turbo_frame_tag :notice do %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

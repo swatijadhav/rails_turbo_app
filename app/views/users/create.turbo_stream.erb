@@ -1,6 +1,8 @@
 <% if @user.errors.present? %>
   <%# TODO: display error %>
 <% else %>
+  <%= notice_stream(message: :create, status: 'green') %>
+
   <%= turbo_stream.replace :new_user do %>
     <%= turbo_frame_tag :new_user %>
   <% end %>
