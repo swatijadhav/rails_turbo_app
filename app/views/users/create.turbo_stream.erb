@@ -1,0 +1,9 @@
+<% if @user.errors.present? %>
+  <%# TODO: display error %>
+<% else %>
+  <%= turbo_stream.replace :new_user do %>
+    <%= turbo_frame_tag :new_user %>
+  <% end %>
+
+   <%= turbo_stream.prepend 'users', partial: 'user', locals: { user: @user } %>
+<% end %>

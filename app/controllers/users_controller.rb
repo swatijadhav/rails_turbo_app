@@ -25,9 +25,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        format.turbo_stream # add format turbo_stream
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
+        format.turbo_stream # add format turbo_stream
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
