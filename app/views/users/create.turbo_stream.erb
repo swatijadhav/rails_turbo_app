@@ -1,5 +1,6 @@
 <% if @user.errors.present? %>
-  <%# TODO: display error %>
+  <%= notice_stream(message: :error, status: 'red') %>
+  <%= form_user_stream(user: @user) %>
 <% else %>
   <%= notice_stream(message: :create, status: 'green') %>
 
